@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>421339059373-umvmlvj4pg8tidg24nl27upicmq3j506.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.421339059373-umvmlvj4pg8tidg24nl27upicmq3j506</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDqwZJHHGS2JLC0mKY3ccjOznhSgXrwwOM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>421339059373</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.josetone.OpenUp</string>
+	<key>PROJECT_ID</key>
+	<string>openup-d431f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>openup-d431f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:421339059373:ios:cbc1b713ab4cba6fb3a224</string>
+</dict>
+</plist>
