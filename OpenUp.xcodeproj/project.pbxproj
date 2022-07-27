@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C5E283828913CEA0093CE49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E283728913CEA0093CE49 /* HomeView.swift */; };
+		2C5E283A28913D240093CE49 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E283928913D240093CE49 /* HomeViewModel.swift */; };
+		2C5E283E2891432D0093CE49 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E283D2891432D0093CE49 /* RecordButton.swift */; };
 		2CE138D4287446540061AA95 /* OpenUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE138D3287446540061AA95 /* OpenUpApp.swift */; };
 		2CE138D6287446540061AA95 /* OpenUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE138D5287446540061AA95 /* OpenUpView.swift */; };
 		2CE138D8287446570061AA95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE138D7287446570061AA95 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C5E283728913CEA0093CE49 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2C5E283928913D240093CE49 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2C5E283D2891432D0093CE49 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		2CE138D0287446540061AA95 /* OpenUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE138D3287446540061AA95 /* OpenUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenUpApp.swift; sourceTree = "<group>"; };
 		2CE138D5287446540061AA95 /* OpenUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenUpView.swift; sourceTree = "<group>"; };
@@ -32,6 +38,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C5E283528913CD00093CE49 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2C5E283628913CD90093CE49 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2C5E283628913CD90093CE49 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2C5E283728913CEA0093CE49 /* HomeView.swift */,
+				2C5E283928913D240093CE49 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2C5E283B289143130093CE49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C5E283C2891431C0093CE49 /* Buttons */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C5E283C2891431C0093CE49 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				2C5E283D2891432D0093CE49 /* RecordButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		2CE138C7287446540061AA95 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +90,8 @@
 		2CE138D2287446540061AA95 /* OpenUp */ = {
 			isa = PBXGroup;
 			children = (
+				2C5E283B289143130093CE49 /* Views */,
+				2C5E283528913CD00093CE49 /* Screens */,
 				2CE138D3287446540061AA95 /* OpenUpApp.swift */,
 				2CE138D5287446540061AA95 /* OpenUpView.swift */,
 				2CE138D7287446570061AA95 /* Assets.xcassets */,
@@ -137,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5E283828913CEA0093CE49 /* HomeView.swift in Sources */,
+				2C5E283E2891432D0093CE49 /* RecordButton.swift in Sources */,
 				2CE138D6287446540061AA95 /* OpenUpView.swift in Sources */,
 				2CE138D4287446540061AA95 /* OpenUpApp.swift in Sources */,
+				2C5E283A28913D240093CE49 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
