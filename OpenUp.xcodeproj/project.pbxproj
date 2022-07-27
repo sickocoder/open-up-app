@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2CE138D4287446540061AA95 /* OpenUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE138D3287446540061AA95 /* OpenUpApp.swift */; };
-		2CE138D6287446540061AA95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE138D5287446540061AA95 /* ContentView.swift */; };
+		2CE138D6287446540061AA95 /* OpenUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE138D5287446540061AA95 /* OpenUpView.swift */; };
 		2CE138D8287446570061AA95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE138D7287446570061AA95 /* Assets.xcassets */; };
 		2CE138DB287446570061AA95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE138DA287446570061AA95 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		2CE138D0287446540061AA95 /* OpenUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE138D3287446540061AA95 /* OpenUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenUpApp.swift; sourceTree = "<group>"; };
-		2CE138D5287446540061AA95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2CE138D5287446540061AA95 /* OpenUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenUpView.swift; sourceTree = "<group>"; };
 		2CE138D7287446570061AA95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CE138DA287446570061AA95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE138D3287446540061AA95 /* OpenUpApp.swift */,
-				2CE138D5287446540061AA95 /* ContentView.swift */,
+				2CE138D5287446540061AA95 /* OpenUpView.swift */,
 				2CE138D7287446570061AA95 /* Assets.xcassets */,
 				2CE138D9287446570061AA95 /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE138D6287446540061AA95 /* ContentView.swift in Sources */,
+				2CE138D6287446540061AA95 /* OpenUpView.swift in Sources */,
 				2CE138D4287446540061AA95 /* OpenUpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +270,7 @@
 				DEVELOPMENT_TEAM = 3A4MTG5775;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +300,7 @@
 				DEVELOPMENT_TEAM = 3A4MTG5775;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
