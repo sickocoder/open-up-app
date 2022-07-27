@@ -14,23 +14,33 @@ struct HomeView: View {
     NavigationView {
       VStack {
         List(viewModel.audios, id: \.self) { audio in
-          Text(audio.relativeString)
+          HStack {
+            Image(systemName: viewModel.currentPlayingAudioURL == audio.absoluteURL ? "stop.fill" : "play.fill")
+            Text(audio.relativeString)
+              .onTapGesture {
+                viewModel.playAudio(url: audio.absoluteURL)
+              }
+          }
         }
         
         Button {
-          if viewModel.record {
+          if viewModel.isRecording {
             viewModel.stopRecordingAudio()
             return
           }
           
           viewModel.recordAudio()
-        } label: { RecordButton(isRecording: viewModel.record) }
+        } label: {
+          RecordButton(isRecording: viewModel.isRecording)
+          
+        }
+        .disabled(viewModel.isPlaying)
         
       }
       .navigationTitle("Open Up")
     }
-    .alert(isPresented: $viewModel.alert) {
-      Alert(title: Text("Error"), message: Text("Enable to access"))
+    .alert(isPresented: $viewModel.shouldShowAlert) {
+      Alert(title: Text("Error"), message: Text("Enable to access the microphone"))
     }
     .onAppear { viewModel.requestPermission() }
   }

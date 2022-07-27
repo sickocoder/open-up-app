@@ -10,12 +10,18 @@ import AVKit
 
 final class HomeViewModel: ObservableObject {
   @Published var audios: [URL] = []
-  @Published var record = false
-  @Published var alert = false
+  @Published var currentPlayingAudioURL: URL!
+  
+  @Published var isRecording = false
+  @Published var shouldShowAlert = false
+  @Published var isPlaying = false
   
   // creating instance for recording...
   private var recorder: AVAudioRecorder!
   private var session: AVAudioSession!
+  
+  // creating instance for playing...
+  private var audioPlayer: AVAudioPlayer!
   
   func requestPermission() {
     do {
@@ -24,7 +30,7 @@ final class HomeViewModel: ObservableObject {
       
       self.session.requestRecordPermission { status in
         if !status {
-          self.alert.toggle()
+          self.shouldShowAlert.toggle()
         } else {
           self.getAudios()
         }
@@ -50,7 +56,7 @@ final class HomeViewModel: ObservableObject {
       
       self.recorder = try AVAudioRecorder(url: filename, settings: settings)
       recorder.record()
-      self.record.toggle()
+      self.isRecording.toggle()
     } catch {
       // TODO: add better error handling
       print(error.localizedDescription)
@@ -59,9 +65,27 @@ final class HomeViewModel: ObservableObject {
   
   func stopRecordingAudio() {
     self.recorder.stop()
-    self.record.toggle()
+    self.isRecording.toggle()
     
     self.getAudios()
+  }
+  
+  func playAudio(url: URL) {
+    do {
+      self.audioPlayer = try AVAudioPlayer(contentsOf: url)
+      
+      if self.isPlaying {
+        self.audioPlayer.stop()
+        self.currentPlayingAudioURL = nil
+      } else {
+        self.audioPlayer.play()
+        self.currentPlayingAudioURL = url
+      }
+      
+      self.isPlaying.toggle()
+    } catch {
+      print("couldn't play the audio")
+    }
   }
   
   func getAudios() {
