@@ -10,7 +10,7 @@ import AVKit
 
 struct OpenUpView: View {
   var body: some View {
-    HomeView()
+    SignInScreen()
   }
 }
 
