@@ -8,12 +8,22 @@
 import SwiftUI
 import Firebase
 import GoogleSignIn
+import FirebaseFirestore
 
 final class SignInViewModel: ObservableObject {
   
-  @Published var isLoggedIn: Bool  = false
+  @AppStorage("loggedUserUID") var loggedUserUID: String = ""
   
-  func signInWithGoogle() {
+  @Published var isLoggedIn: Bool  = false
+  @Published var user: UserModel!
+  
+  private let firestoreService: OUFirebaseFirestore
+  
+  init(firestoreService: OUFirebaseFirestore) {
+    self.firestoreService = firestoreService
+  }
+  
+  func signInWithGoogle(response: @escaping (UserModel?, Error?) -> ()) {
     // get app client id
     guard let clientID = FirebaseApp.app()?.options.clientID else { return }
     
@@ -25,7 +35,7 @@ final class SignInViewModel: ObservableObject {
       [self] user, err in
       
       if let error = err {
-        print(error.localizedDescription)
+        response(nil, error)
         return
       }
       
@@ -38,14 +48,37 @@ final class SignInViewModel: ObservableObject {
       
       Auth.auth().signIn(with: credential) { result, error in
         if let err = error {
-          print(err.localizedDescription)
+          response(nil, err)
           return
         }
         
-        guard let user = result?.user else { return }
-        print(user.displayName)
+        guard let user = result?.user else {
+          response(nil, nil)
+          return
+        }
         
-        self.isLoggedIn.toggle()
+        self.user = UserModel(
+          id: user.uid,
+          name: user.displayName ?? "",
+          email: user.email ?? "",
+          photoURL: user.photoURL
+        )
+        
+        self.firestoreService.saveData(self.user.toDictionary(), onCollection: .users, andDocument: user.uid) { error in
+          
+          if let error = error {
+            response(nil, error)
+            print("couldnt save user data")
+            return
+          }
+          
+          self.isLoggedIn.toggle()
+          self.loggedUserUID = user.uid
+          
+          response(self.user, nil)
+          
+        }
+        
       }
     }
   }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C31B0C028A113BB0081DD1F /* OUFirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C31B0BF28A113BB0081DD1F /* OUFirebaseStorage.swift */; };
+		2C31B0C228A117A80081DD1F /* OUFirebaseFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C31B0C128A117A80081DD1F /* OUFirebaseFirestore.swift */; };
+		2C31B0C528A11A4F0081DD1F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C31B0C428A11A4F0081DD1F /* Date+Ext.swift */; };
+		2C31B0C828A126FB0081DD1F /* OUFirestoreCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C31B0C728A126FB0081DD1F /* OUFirestoreCollections.swift */; };
 		2C5166942891E7B000CD666E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 2C5166932891E7B000CD666E /* GoogleSignIn */; };
 		2C5166972891E8D100CD666E /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5166962891E8D100CD666E /* SignInScreen.swift */; };
 		2C5166992891E8FB00CD666E /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5166982891E8FB00CD666E /* SignInViewModel.swift */; };
@@ -24,6 +28,8 @@
 		2C5E2853289154330093CE49 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C5E2852289154330093CE49 /* FirebaseFirestoreSwift */; };
 		2C5E2855289154330093CE49 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2C5E2854289154330093CE49 /* FirebaseStorage */; };
 		2C6D9DFC2893DBAB0060C665 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D9DFB2893DBAB0060C665 /* Application.swift */; };
+		2CCD48BF2895967100CA072D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD48BE2895967100CA072D /* User.swift */; };
+		2CCD48C22895DA4400CA072D /* OUAudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD48C12895DA4400CA072D /* OUAudioService.swift */; };
 		2CE138D4287446540061AA95 /* OpenUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE138D3287446540061AA95 /* OpenUpApp.swift */; };
 		2CE138D6287446540061AA95 /* OpenUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE138D5287446540061AA95 /* OpenUpView.swift */; };
 		2CE138D8287446570061AA95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE138D7287446570061AA95 /* Assets.xcassets */; };
@@ -31,6 +37,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C31B0BF28A113BB0081DD1F /* OUFirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUFirebaseStorage.swift; sourceTree = "<group>"; };
+		2C31B0C128A117A80081DD1F /* OUFirebaseFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUFirebaseFirestore.swift; sourceTree = "<group>"; };
+		2C31B0C428A11A4F0081DD1F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		2C31B0C728A126FB0081DD1F /* OUFirestoreCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUFirestoreCollections.swift; sourceTree = "<group>"; };
 		2C5166912891E6A200CD666E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2C5166962891E8D100CD666E /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
 		2C5166982891E8FB00CD666E /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -39,6 +49,8 @@
 		2C5E283D2891432D0093CE49 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		2C5E2841289152460093CE49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C6D9DFB2893DBAB0060C665 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		2CCD48BE2895967100CA072D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2CCD48C12895DA4400CA072D /* OUAudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUAudioService.swift; sourceTree = "<group>"; };
 		2CE138D0287446540061AA95 /* OpenUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE138D3287446540061AA95 /* OpenUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenUpApp.swift; sourceTree = "<group>"; };
 		2CE138D5287446540061AA95 /* OpenUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenUpView.swift; sourceTree = "<group>"; };
@@ -67,6 +79,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C31B0C328A11A410081DD1F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C31B0C428A11A4F0081DD1F /* Date+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2C31B0C628A126DA0081DD1F /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2C31B0C728A126FB0081DD1F /* OUFirestoreCollections.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		2C5166952891E8A900CD666E /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,9 +141,29 @@
 		2C6D9DFA2893DB8F0060C665 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2C31B0C628A126DA0081DD1F /* Enums */,
+				2C31B0C328A11A410081DD1F /* Extensions */,
 				2C6D9DFB2893DBAB0060C665 /* Application.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2CCD48BD2895966100CA072D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CCD48BE2895967100CA072D /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2CCD48C02895DA1700CA072D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2CCD48C12895DA4400CA072D /* OUAudioService.swift */,
+				2C31B0BF28A113BB0081DD1F /* OUFirebaseStorage.swift */,
+				2C31B0C128A117A80081DD1F /* OUFirebaseFirestore.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		2CE138C7287446540061AA95 = {
@@ -137,13 +185,15 @@
 		2CE138D2287446540061AA95 /* OpenUp */ = {
 			isa = PBXGroup;
 			children = (
+				2CCD48C02895DA1700CA072D /* Services */,
+				2CCD48BD2895966100CA072D /* Models */,
 				2C6D9DFA2893DB8F0060C665 /* Utilities */,
-				2C5166912891E6A200CD666E /* Info.plist */,
 				2C5E283B289143130093CE49 /* Views */,
 				2C5E283528913CD00093CE49 /* Screens */,
 				2CE138D3287446540061AA95 /* OpenUpApp.swift */,
 				2CE138D5287446540061AA95 /* OpenUpView.swift */,
 				2CE138D7287446570061AA95 /* Assets.xcassets */,
+				2C5166912891E6A200CD666E /* Info.plist */,
 				2C5E2841289152460093CE49 /* GoogleService-Info.plist */,
 				2CE138D9287446570061AA95 /* Preview Content */,
 			);
@@ -245,12 +295,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C31B0C228A117A80081DD1F /* OUFirebaseFirestore.swift in Sources */,
+				2CCD48C22895DA4400CA072D /* OUAudioService.swift in Sources */,
+				2C31B0C528A11A4F0081DD1F /* Date+Ext.swift in Sources */,
 				2C6D9DFC2893DBAB0060C665 /* Application.swift in Sources */,
 				2C5E283828913CEA0093CE49 /* HomeView.swift in Sources */,
 				2C5E283E2891432D0093CE49 /* RecordButton.swift in Sources */,
 				2C5166992891E8FB00CD666E /* SignInViewModel.swift in Sources */,
 				2CE138D6287446540061AA95 /* OpenUpView.swift in Sources */,
+				2CCD48BF2895967100CA072D /* User.swift in Sources */,
+				2C31B0C028A113BB0081DD1F /* OUFirebaseStorage.swift in Sources */,
 				2CE138D4287446540061AA95 /* OpenUpApp.swift in Sources */,
+				2C31B0C828A126FB0081DD1F /* OUFirestoreCollections.swift in Sources */,
 				2C5E283A28913D240093CE49 /* HomeViewModel.swift in Sources */,
 				2C5166972891E8D100CD666E /* SignInScreen.swift in Sources */,
 			);
