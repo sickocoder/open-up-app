@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseFirestore
 import GoogleSignIn
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -29,7 +30,7 @@ struct OpenUpApp: App {
   var body: some Scene {
     WindowGroup {
       OpenUpView()
-        .environmentObject(SignInViewModel())
+        .environmentObject(SignInViewModel(firestoreService: OUFirebaseFirestore()))
     }
   }
 }

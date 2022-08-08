@@ -11,83 +11,84 @@ import AVKit
 final class HomeViewModel: ObservableObject {
   @Published var audios: [URL] = []
   @Published var currentPlayingAudioURL: URL!
+  @Published var currentRecordingAudioURL: URL!
   
   @Published var isRecording = false
   @Published var shouldShowAlert = false
   @Published var isPlaying = false
   
-  // creating instance for recording...
-  private var recorder: AVAudioRecorder!
-  private var session: AVAudioSession!
-  
-  // creating instance for playing...
-  private var audioPlayer: AVAudioPlayer!
+  private let audioService: OUAudioService = OUAudioService()
+  private let storageService = OUFirebaseStorage(firestoreService: OUFirebaseFirestore())
   
   func requestPermission() {
-    do {
-      self.session = AVAudioSession.sharedInstance()
-      try self.session.setCategory(.playAndRecord)
-      
-      self.session.requestRecordPermission { status in
-        if !status {
-          self.shouldShowAlert.toggle()
-        } else {
-          self.getAudios()
-        }
+    self.audioService.requestPermission { status, error in
+      if let err = error {
+        print(err.localizedDescription)
+        return
       }
-    }
-    catch {
-      print(error.localizedDescription)
+      
+      if !status {
+        self.shouldShowAlert.toggle()
+      } else {
+        self.getAudios()
+      }
     }
   }
   
   func recordAudio() {
-    do {
-      let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    
+    self.audioService.recordAudio { fileURL, err in
+      if let error = err {
+        print(error.localizedDescription)
+        return
+      }
       
-      let filename = url.appendingPathComponent("myRcd\(self.audios.count + 1).m4a")
-      
-      let settings = [
-        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-        AVSampleRateKey: 12000,
-        AVNumberOfChannelsKey: 1,
-        AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-      ]
-      
-      self.recorder = try AVAudioRecorder(url: filename, settings: settings)
-      recorder.record()
-      self.isRecording.toggle()
-    } catch {
-      // TODO: add better error handling
-      print(error.localizedDescription)
+      self.currentRecordingAudioURL = fileURL
+      self.isRecording = true
     }
   }
   
-  func stopRecordingAudio() {
-    self.recorder.stop()
-    self.isRecording.toggle()
-    
-    self.getAudios()
+  func stopRecordingAudio(userID: String) {
+    self.audioService.stopRecordingAudio {
+      self.isRecording.toggle()
+      self.getAudios()
+      
+      
+      
+      self.storageService.save(withURL: self.currentRecordingAudioURL, forUser: userID) { error in
+        if let error = error {
+          print(error.localizedDescription)
+          return
+        }
+      }
+    }
   }
   
   func playAudio(url: URL) {
-    do {
-      self.audioPlayer = try AVAudioPlayer(contentsOf: url)
-      
-      if self.isPlaying {
-        self.audioPlayer.stop()
-        self.currentPlayingAudioURL = nil
-      } else {
-        self.audioPlayer.play()
-        self.currentPlayingAudioURL = url
+    if self.isPlaying {
+      self.audioService.stopPlayingAudio(url: url) { didStop, error in
+        if let error = error {
+          print(error.localizedDescription)
+          return
+        }
+        
+        self.isPlaying = didStop
+      }
+    } else {
+      self.audioService.playAudio(url: url) { isPlaying, error in
+        if let error = error {
+          print(error.localizedDescription)
+          return
+        }
+        
+        self.isPlaying = isPlaying
       }
       
-      self.isPlaying.toggle()
-    } catch {
-      print("couldn't play the audio")
+      self.currentPlayingAudioURL = nil
     }
   }
   
+  // Get audios list from firebase
   func getAudios() {
     do {
       let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]

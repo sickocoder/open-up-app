@@ -12,7 +12,12 @@ struct SignInScreen: View {
   
   var body: some View {
     Button {
-      signInVM.signInWithGoogle()
+      signInVM.signInWithGoogle { _, error in
+        if let error = error {
+          print(error.localizedDescription)
+          return
+        }
+      }
     } label: {
       Text("Sign In")
     }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+  @AppStorage("loggedUserUID") var loggedUserUID: String = ""
   @ObservedObject var viewModel = HomeViewModel()
   
   var body: some View {
@@ -25,7 +26,7 @@ struct HomeView: View {
         
         Button {
           if viewModel.isRecording {
-            viewModel.stopRecordingAudio()
+            viewModel.stopRecordingAudio(userID: loggedUserUID)
             return
           }
           

@@ -9,8 +9,18 @@ import SwiftUI
 import AVKit
 
 struct OpenUpView: View {
+  @EnvironmentObject var signInVM: SignInViewModel
+  @AppStorage("loggedUserUID") var loggedUserUID: String = ""
+  
   var body: some View {
-    SignInScreen()
+    ZStack {
+      if !loggedUserUID.isEmpty {
+//        Text(loggedUserUID)
+        HomeView()
+      } else {
+        SignInScreen()
+      }
+    }
   }
 }
 
@@ -19,4 +29,5 @@ struct ContentView_Previews: PreviewProvider {
     OpenUpView()
   }
 }
+
 
